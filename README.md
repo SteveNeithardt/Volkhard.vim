@@ -10,6 +10,14 @@ The only tested way of installing this plugin is through [dein.vim](https://gith
 
 To install, use your favorite vim plugin manager and add it to loaded plugins.
 
+In order to activate the plugin, call
+
+	call Volkhard#ActivateAll()
+
+in your .vimrc once the plugin has been loaded.
+
+To activate only parts of the plugin, read the docs for more detail as to which parts do what.
+
 ## Features
 - Faster split navigation through use of <Ctrl-hjkl> key bindings
 - (Un-)Comment code with (F5)F6.
