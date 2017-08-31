@@ -6,20 +6,20 @@
 " ----------------------------------------------------------------------------
 
 " Activates all Plugin Parts
-function! Volkhard#ActivateAll() "{{{
-	call Volkhard#ActivateOptions()
-	call Volkhard#CustomLeader()
-	call Volkhard#ActivateNavigationBindings()
-	call Volkhard#ActivateLanguageCustomFunctionalities()
-	call Volkhard#ActivateStatusLine()
-	call Volkhard#ActivateFoldText()
-	call Volkhard#ActivateColorscheme()
+function! volkhard#ActivateAll() "{{{
+	call volkhard#ActivateOptions()
+	call volkhard#CustomLeader()
+	call volkhard#ActivateNavigationBindings()
+	call volkhard#ActivateLanguageCustomFunctionalities()
+	call volkhard#ActivateStatusLine()
+	call volkhard#ActivateFoldText()
+	call volkhard#ActivateColorscheme()
 endfunction "}}}
 
 " Plugin Parts ---------------------------------------------------------------
 
 " Sets a number of default settings so vim is better
-function! Volkhard#ActivateOptions() "{{{
+function! volkhard#ActivateOptions() "{{{
 	set encoding=utf-8
 	set nobomb
 	set vb
@@ -49,12 +49,12 @@ function! Volkhard#ActivateOptions() "{{{
 
 endfunction "}}}
 
-function! Volkhard#CustomLeader() "{{{
+function! volkhard#CustomLeader() "{{{
 	let mapleader = '-'
 endfunction "}}}
 
 " Defines all navigation bindings, for splits and tabs
-function! Volkhard#ActivateNavigationBindings() "{{{
+function! volkhard#ActivateNavigationBindings() "{{{
 	nnoremap <leader>tn :tabnew<CR>
 	nnoremap <leader>tc :tabclose<CR>
 	nnoremap <leader>tm :tabmove 
@@ -83,7 +83,7 @@ endfunction "}}}
 " - tex.vim
 " - txt.vim
 " - vim.vim
-function! Volkhard#ActivateLanguageCustomFunctionalities() "{{{
+function! volkhard#ActivateLanguageCustomFunctionalities() "{{{
 	if has("autocmd")
 		au BufRead,BufNewFile *.cpp,*.c,*.hpp,*.hpp,*.cu source lang/cpp.vim
 		au BufRead,BufNewFile *.glsl source lang/cpp.vim
@@ -103,23 +103,23 @@ function! Volkhard#ActivateLanguageCustomFunctionalities() "{{{
 endfunction "}}}
 
 " A better status line for better information
-function! Volkhard#ActivateStatusLine() "{{{
+function! volkhard#ActivateStatusLine() "{{{
 	set ruler
 	set laststatus=2
-	set statusline=%!Volkhard#StatusLine()
+	set statusline=%!volkhard#StatusLine()
 endfunction "}}}
 
 " A better fold text with extra info, and prettier display
-function! Volkhard#ActivateFoldText() "{{{
+function! volkhard#ActivateFoldText() "{{{
 	if has("folding")
 		set foldenable
 		set foldcolumn=3
-		set foldtext=Volkhard#FoldText()
+		set foldtext=volkhard#FoldText()
 	endif " has("folding")
 endfunction "}}}
 
 " Make the colors as they should be
-function! Volkhard#ActivateColorscheme() "{{{
+function! volkhard#ActivateColorscheme() "{{{
 	set background=dark
 
 endfunction "}}}
@@ -127,7 +127,7 @@ endfunction "}}}
 " Helper functions -----------------------------------------------------------
 
 " StatusLine
-function! Volkhard#StatusLine() "{{{
+function! volkhard#StatusLine() "{{{
 	let l:buf = '%n '
 	let l:file = '%<%F'
 	let l:flags = ' %h%m%r'
@@ -139,7 +139,7 @@ function! Volkhard#StatusLine() "{{{
 endfunction "}}}
 
 " FoldText
-function! Volkhard#FoldText() "{{{
+function! volkhard#FoldText() "{{{
 	let l:winwidth = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
 	let l:subline = getline(v:foldstart)
 	let l:subchars = '%\|//\|/\*\|{{{\d*\|"\s'
