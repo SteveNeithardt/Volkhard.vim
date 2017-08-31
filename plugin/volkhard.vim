@@ -121,7 +121,7 @@ endfunction "}}}
 " Make the colors as they should be
 function! volkhard#ActivateColorscheme() "{{{
 	set background=dark
-
+	colorscheme volkhard
 endfunction "}}}
 
 " Helper functions -----------------------------------------------------------
